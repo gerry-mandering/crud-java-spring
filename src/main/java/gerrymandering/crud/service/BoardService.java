@@ -48,4 +48,15 @@ public class BoardService {
     public Optional<Board> readOne(Long boardId) {
         return boardRepository.findById(boardId);
     }
+
+    //게시글 수정
+    public Long update(Board board, Long id) {
+        boardRepository.update(board, id);
+        return board.getId();
+    }
+
+    //게시글 삭제
+    public void delete(Long id) {
+        boardRepository.delete(id);
+    }
 }

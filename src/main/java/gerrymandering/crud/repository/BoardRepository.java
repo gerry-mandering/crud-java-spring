@@ -12,5 +12,6 @@ public interface BoardRepository {
     Optional<Board> findByTitle(String title);
     Optional<Board> findByContent(String content);
     List<Board> findAll();
-
+    Board update(Board board, Long id);
+    void delete(Long id);
 }
