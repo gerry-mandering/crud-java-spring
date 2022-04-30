@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 목록</title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <a href="/boards/new">게시글 작성</a>
+    </div>
+    </br>
+    <div th:each="board : ${boardList}">
+        <table>
+            <thead>
+                <tr>
+                    <th>제목</th>
+                    <th th:text="${board.title}"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>내용</th>
+                    <td th:text="${board.content}"></td>
+                </tr>
+            </tbody>
+        </table>
+        </br>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
